@@ -11,7 +11,6 @@ async function sendMail() {
     const queue = "mail_queue"; //All data to send this queue
     const exchange = "main_exchange";
     const routingKey = "send_mail";
-
     const message = {
       to: "sakinisla79@gmail.com",
       from: "sakinislam790@gmail.com",
@@ -33,6 +32,7 @@ async function sendMail() {
       routingKey, //routingKey ta mail_queue k refer korche
       Buffer.from(JSON.stringify(message))
     );
+
     if (isPublished) {
       console.log("Message sent successfully", message);
     } else {
